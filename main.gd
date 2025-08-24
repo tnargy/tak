@@ -36,7 +36,7 @@ func create_square(row, col):
 	var square = Node2D.new()
 	square.position = Vector2(col * SQUARE_SIZE, row * SQUARE_SIZE)
 	var sprite = Sprite2D.new()
-	sprite.texture = preload("res://Square.jpg")  # Placeholder texture for square
+	sprite.texture = preload("res://square.png")  # Placeholder texture for square
 	sprite.scale = Vector2(SQUARE_SIZE / 64.0, SQUARE_SIZE / 64.0)
 	square.add_child(sprite)
 	add_child(square)
@@ -45,6 +45,7 @@ func create_square(row, col):
 func setup_ui():
 	var ui = VBoxContainer.new()
 	ui.position = Vector2(BOARD_SIZE * SQUARE_SIZE + 20, 20)
+	ui.name = "VBoxContainer"
 	
 	var turn_label = Label.new()
 	turn_label.name = "TurnLabel"
